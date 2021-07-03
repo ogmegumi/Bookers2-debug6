@@ -1,12 +1,21 @@
 <table class='table'>
   <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
   <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
+    <th>name</th>
+    <th><%= user.name %></th>
   </tr>
   <tr>
-	  <th>introduction</th>
-	  <th><%= user.introduction %></th>
+    <th>introduction</th>
+    <th><%= user.introduction %></th>
+  </tr>
+  <tr>
+     <th>follows</th>
+     <th><%= link_to user.followings.count, user_followings_path(user), class: "user_#{user.id}" %></th>
+     <!--%= link_to book.title, book_path(book), class: "book_#{book.id}" %-->
+  </tr>
+  <tr>
+     <th>followers</th>
+     <th><%= link_to user.followers.count, user_followers_path(user), class: "user_#{user.id}" %></th>
   </tr>
 </table>
 
