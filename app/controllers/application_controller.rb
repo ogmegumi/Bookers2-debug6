@@ -1,10 +1,19 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
   before_action :authenticate_user!,except: [:top, :about]
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
   def after_sign_in_path_for(resource)
     user_path(current_user)
+=======
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  private
+
+  def after_sign_in_path_for(resource)
+    user_path(resource)
+>>>>>>> origin/main
   end
 
   def after_sign_out_path_for(resource)

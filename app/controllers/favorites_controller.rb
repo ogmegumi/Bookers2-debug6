@@ -15,3 +15,7 @@ class FavoritesController < ApplicationController
     # redirect_to request.referer
   end
 end
+<<<<<<< HEAD
+=======
+qemri3-Matvaf-gibmym
+>>>>>>> origin/main

@@ -1,6 +1,7 @@
 <table class='table'>
   <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
   <tr>
+<<<<<<< HEAD
     <th>name</th>
     <th><%= user.name %></th>
   </tr>
@@ -16,6 +17,14 @@
   <tr>
      <th>followers</th>
      <th><%= link_to user.followers.count, user_followers_path(user), class: "user_#{user.id}" %></th>
+=======
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= user.introduction %></th>
+>>>>>>> origin/main
   </tr>
 </table>
 

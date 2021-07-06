@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+<<<<<<< HEAD
 before_action :correct_user, only: [:edit]
 
   def show
@@ -7,6 +8,14 @@ before_action :correct_user, only: [:edit]
     @user = @book.user
     @book_comment = BookComment.new
     @book_comments = @book.book_comments
+=======
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
+  def show
+    @book = Book.find(params[:id]) 
+    @book_comment = BookComment.new
+>>>>>>> origin/main
   end
 
   def index
@@ -26,11 +35,17 @@ before_action :correct_user, only: [:edit]
   end
 
   def edit
+<<<<<<< HEAD
     @book = Book.find(params[:id])
   end
 
   def update
     @book = Book.find(params[:id])
+=======
+  end
+
+  def update
+>>>>>>> origin/main
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "You have updated book successfully."
     else
@@ -39,7 +54,10 @@ before_action :correct_user, only: [:edit]
   end
 
   def destroy
+<<<<<<< HEAD
     @book = Book.find(params[:id])
+=======
+>>>>>>> origin/main
     @book.destroy
     redirect_to books_path
   end
@@ -50,9 +68,18 @@ before_action :correct_user, only: [:edit]
     params.require(:book).permit(:title, :body)
   end
 
+<<<<<<< HEAD
   def correct_user
     @book = Book.find(params[:id])
     redirect_to(books_url) unless @book.user == current_user
   end
 
+=======
+  def ensure_correct_user
+    @book = Book.find(params[:id])
+    unless @book.user == current_user
+      redirect_to books_path
+    end
+  end
+>>>>>>> origin/main
 end

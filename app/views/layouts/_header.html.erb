@@ -8,6 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
+<<<<<<< HEAD
           <li><%= link_to ' Home', user_path(current_user), class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' Users', users_path, class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' Books', books_path , class: 'fas fa-book-open nav-link text-light' %></li>
@@ -17,11 +18,23 @@
           <li><%= link_to ' About', home_about_path, class: 'fas fa-link nav-link text-light' %></li>
           <li><%= link_to ' sign up', new_user_registration_path, class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to ' login', new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+=======
+          <li><%= link_to ' Home',user_path(current_user),class: 'fas fa-home nav-link text-light' %></li>
+          <li><%= link_to ' Users',users_path,class: 'fas fa-users nav-link text-light' %></li>
+          <li><%= link_to ' Books',books_path ,class: 'fas fa-book-open nav-link text-light'%></li>
+          <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+        <% else %>
+          <li><%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-light' %></li>
+          <li><%= link_to ' About',home_about_path,class: 'fas fa-link nav-link text-light' %></li>
+          <li><%= link_to ' sign up', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
+          <li><%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+>>>>>>> origin/main
         <% end %>
         </ul>
       </div>
     </div>
   </nav>
+<<<<<<< HEAD
         <% if user_signed_in? %>
       <div class="d-flex align-items-center justify-content-center">
           <%= form_with url:search_search_path, method: :get, local: true do |f| %>
@@ -32,4 +45,6 @@
          <% end %>
       </div>
        <% end %>
+=======
+>>>>>>> origin/main
 </header>
